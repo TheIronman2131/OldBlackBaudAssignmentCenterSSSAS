@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Classic Assignment Center",
+    "version": "1.0.0",
+    "description": "A Chrome extension that brings back the classic Assignment Center.",
+    "permissions": ["webRequest", "webNavigation", "tabs", "storage", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "OldAssignmentCenter-main/js/service-worker.js"
+    },
+    "action": {
+        "default_title": "Internal Site Monitor"
+    },
+    "icons": {
+        "128": "OldAssignmentCenter-main/assets/images/icon_128x.png"
+    }
+}
