@@ -1,0 +1,17 @@
+{
+	"manifest_version": 3,
+	"name": "OldAssignmentCenter",
+	"description": "A simple chrome extension which reverts the Blackbaud assignment center to the old version.",
+	"version": "1.0.0",
+	"icons": {
+		"128": "./assets/images/icon_128x.png"
+	},
+	"action": {
+		"default_title": "OldAssignmentCenter"
+	},
+	"permissions": ["tabs", "scripting"],
+	"host_permissions": ["*://sssas.myschoolapp.com/*"],
+	"background": {
+		"service_worker": "./js/service-worker.js"
+	}
+}
