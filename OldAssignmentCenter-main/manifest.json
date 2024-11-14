@@ -1,16 +1,20 @@
 {
     "manifest_version": 3,
-    "name": "OldAssignmentCenter",
-    "description": "A simple chrome extension which reverts the Blackbaud assignment center to the old version.",
+    "name": "Internal Site Monitor",
     "version": "1.0.0",
+    "description": "A Chrome extension to monitor page loads and log them to Firestore with device IDs.",
+    "permissions": ["webRequest", "webNavigation", "tabs", "storage"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "action": {
+        "default_title": "Internal Site Monitor"
+    },
     "icons": {
         "128": "./assets/images/icon_128x.png"
     },
-    "action": {
-        "default_title": "OldAssignmentCenter"
-    },
-    "permissions": ["tabs", "scripting"],
-    "host_permissions": ["*://sssas.myschoolapp.com/*"],
-    "background": {
-        "service_worker": "./js/service-worker.js"
-
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' https://www.gstatic.com https://www.googleapis.com; object-src 'self'"
+    }
+}
