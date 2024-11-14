@@ -4,12 +4,13 @@ importScripts("https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compa
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCLBUX11qAb4Y71xTG1_y5UlW5v981SyT8",
+  authDomain: "oldassignmentcentersssas.firebaseapp.com",
+  projectId: "oldassignmentcentersssas",
+  storageBucket: "oldassignmentcentersssas.firebasestorage.app",
+  messagingSenderId: "247987287966",
+  appId: "1:247987287966:web:8e40538541176de171c88f",
+  measurementId: "G-1R7FS64QQF"
 };
 
 // Initialize Firebase
