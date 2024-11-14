@@ -12,5 +12,5 @@
     "permissions": ["tabs", "scripting"],
     "host_permissions": ["*://sssas.myschoolapp.com/*"],
     "background": {
-        "service_worker": "./js/service-worker.js
+        "service_worker": "./js/service-worker.js"
 
