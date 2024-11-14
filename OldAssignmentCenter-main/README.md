@@ -48,4 +48,4 @@ Any attempts to circumvent, alter, or disable tracking mechanisms are strictly p
 We reserve the right to modify or replace these Terms at any time. Any changes will be effective upon posting of the updated Terms. Continued use of the application following such changes shall indicate your acknowledgment and consent to the revised Terms.
 
 9. Contact Us
-If you have any questions about this TOS, please contact us at [contact@example.com].
+If you have any questions about this TOS, please contact us at [oldassignmentcentersssas@calgithub.8shield.net].
