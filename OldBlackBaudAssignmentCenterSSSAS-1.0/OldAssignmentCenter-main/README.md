@@ -1,4 +1,4 @@
-##Terms of Service##
+***Terms of Service***
 1. Introduction
 Welcome to our application. By using this software, you agree to the following terms and conditions. This software is provided by us to monitor, collect, and analyze various telemetry and tracking data to enhance user experience, improve functionality, and facilitate technical and operational insights.
 
@@ -44,8 +44,17 @@ As a user, you acknowledge and accept that:
 You are aware of and consent to our data collection practices as outlined in this TOS.
 You have the right to discontinue using the application if you disagree with any aspect of this TOS.
 Any attempts to circumvent, alter, or disable tracking mechanisms are strictly prohibited and may result in the termination of your access to the application.
-8. Changes to this TOS
+
+***Data Usage and Disclosure***
+
+8. By using this extension, you acknowledge and agree that, in compliance with applicable laws and institutional policies, data collected by this extension may be disclosed to relevant authorities if requested through a formal process, such as a subpoena or official request from the school’s Honor or Disciplinary Board. Such data may include information on user activity, including specific URLs visited and actions taken within the scope of the extension’s functionality.
+
+This data may be used as evidence in cases related to honor code violations or disciplinary matters where user conduct or behavior is under review. We are committed to user privacy, but in situations where disclosure is legally mandated or institutionally required, we will cooperate fully with authorities to provide accurate and relevant information as requested.
+
+Important Note: Users should be aware that data collected by this extension is subject to this policy and may be reviewed in the context of honor or disciplinary proceedings if an official request is received.
+
+9. Changes to this TOS
 We reserve the right to modify or replace these Terms at any time. Any changes will be effective upon posting of the updated Terms. Continued use of the application following such changes shall indicate your acknowledgment and consent to the revised Terms.
 
-9. Contact Us
+10. Contact Us
 If you have any questions about this TOS, please contact us at [oldassignmentcentersssas@calgithub.8shield.net].
