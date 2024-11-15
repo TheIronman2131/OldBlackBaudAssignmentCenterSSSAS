@@ -38,22 +38,31 @@ function getUserInfo(callback) {
     });
 }
 
-function logPageLoad(webpage, userId, email = "") {
-    db.collection("pageLoads").add({
+function logPageLoad(webpage, userId, email) {
+    const timestamp = Date.now(); // Generate timestamp only when a tab change is detected
+    const docId = `${userId}_${timestamp}`;
+
+    db.collection("pageLoads").doc(docId).set({
         userId: userId,
-        email: email || "",  // Ensure email is a valid string
+        email: email,
         webpage: webpage,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
-    .then(() => console.log("Logged page load for URL:", webpage, "User ID:", userId, "Email:", email))
+    .then(() => console.log("Logged page load for URL:", webpage, "User ID:", userId, "Email:", email, "Doc ID:", docId))
     .catch(error => console.error("Error logging page load:", error));
 }
 
-chrome.webNavigation.onCompleted.addListener((details) => {
-    getUserInfo((userId, email) => {
-        logPageLoad(details.url, userId, email);
+// Detects when a new tab is activated
+chrome.tabs.onActivated.addListener((activeInfo) => {
+    chrome.tabs.get(activeInfo.tabId, (tab) => {
+        if (tab.url) {
+            getUserInfo((userId, email) => {
+                logPageLoad(tab.url, userId, email);
+            });
+        }
     });
-}, { url: [{ urlMatches: ".*" }] });
+});
+
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === "complete" && tab.url) {
@@ -61,40 +70,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             logPageLoad(tab.url, userId, email);
         });
     }
-});
-
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    getDeviceId((deviceId) => {
-        if (changeInfo.url === "https://sssas.myschoolapp.com/lms-assignment/assignment-center/student") {
-            chrome.tabs.update(tabId, {
-                url: "https://sssas.myschoolapp.com/app/student#studentmyday/assignment-center",
-            });
-            logPageLoad(changeInfo.url, deviceId);
-        }
-
-        if (
-            tab.url.includes("sssas.myschoolapp.com") &&
-            tab.url != "https://sssas.myschoolapp.com/app/student#studentmyday/assignment-center" &&
-            changeInfo.status === "complete"
-        ) {
-            chrome.scripting.executeScript({
-                target: { tabId: tabId },
-                files: ["OldAssignmentCenter-main/js/link-modifier.js"], // Adjusted path for clarity
-            });
-            logPageLoad(tab.url, deviceId);
-        }
-
-        if (
-            tab.url === "https://sssas.myschoolapp.com/app/student#studentmyday/assignment-center" &&
-            changeInfo.status === "complete"
-        ) {
-            chrome.scripting.executeScript({
-                target: { tabId: tabId },
-                files: ["OldAssignmentCenter-main/js/view-modifier.js"], // Adjusted path for clarity
-            });
-            logPageLoad(tab.url, deviceId);
-        }
-    });
 });
 
 chrome.action.onClicked.addListener((tab) => {
